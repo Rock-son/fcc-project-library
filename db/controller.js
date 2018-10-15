@@ -15,7 +15,7 @@ exports.getBooks = function(req, res, next) {
 exports.getBook = function(req, res, next) {
 	var bookid = req.params.id;
 	LibrarySchema.findById(bookid).exec((err, results) => {
-		if (err) { return next(err); }
+		if (err) { return res.status(400).send("no book exists"); }
 
 		res.status(200).send(results);
 	});
