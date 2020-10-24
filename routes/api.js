@@ -19,7 +19,7 @@ const MONGODB_CONNECTION_STRING = process.env.DB;
 const db = require("../db/controller");
 
 mongoose.Promise = global.Promise;
-mongoose.connect(MONGODB_CONNECTION_STRING, { useNewUrlParser: true, autoIndex: false });
+mongoose.connect(MONGODB_CONNECTION_STRING, { useNewUrlParser: true, autoIndex: false, useUnifiedTopology: true });
 mongoose.set('useFindAndModify', false);
 
 
